@@ -1,42 +1,35 @@
 package com.example.demo.samples;
 
-import java.io.IOException;
-
+/**
+ * @author vbanik
+ * 
+ * Program to fill an array of size 5 in cyclic order with a given integer n
+ * Input- 6
+ * Output- 6 2 3 4 5
+ *
+ */
 public class ArrayFiller {
-static int arr[]=new int[5];
-static void fill(int n) {
-	int temp=1;
-	outer:while(true) {
-		for(int i=0;i<arr.length;i++) {
-			arr[i]=temp;
-			if(temp==n) {
-				break outer;
-			}
-			temp++;
-		}
-	}
-	for(int i=0;i<arr.length;i++) {
-	System.out.print(arr[i]+" ");
-	}
-	System.out.println();
-}
 
-static void staircase(int n) {
-	int k = 1;
-	int count=1;
-	while (n != 0) {
-		for (int j = 0; j < k; j++) {
-			System.out.print(count+++" ");
+	static int arr[]=new int[5];
+
+	static void fill(int n) {
+		int temp=1;
+		outer:while(true) {
+			for(int i=0;i<arr.length;i++) {
+				arr[i]=temp;
+				if(temp==n) {
+					break outer;
+				}
+				temp++;
+			}
 		}
-		k++;
-		System.out.println();
-		n--;
-		if(count>n) break;
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
 	}
-}
-public static void main(String[] args) throws IOException {
-	
-	fill(6);
-	staircase(10);
-}
+
+	public static void main(String[] args) {
+
+		fill(6);
+	}
 }

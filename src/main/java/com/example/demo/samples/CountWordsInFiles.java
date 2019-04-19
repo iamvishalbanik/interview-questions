@@ -1,14 +1,23 @@
 package com.example.demo.samples;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Demo1 {
+/**
+ * @author vbanik
+ * 
+ * Program to read two files and count the number of words which are common in both the files.
+ * Input-
+ * file1- word of the day
+ * file2- thought of the week
+ * Output- 2
+ *
+ */
+public class CountWordsInFiles {
 
 	public static void main(String[] args) throws IOException {
+
 		BufferedReader reader1=new BufferedReader(new FileReader("C:\\Users\\vbanik\\Desktop\\file1.txt"));
 		BufferedReader reader2=new BufferedReader(new FileReader("C:\\Users\\vbanik\\Desktop\\file2.txt"));
 		String s1,s2;
@@ -27,12 +36,6 @@ public class Demo1 {
 		System.out.println(count);
 		reader1.close();
 		reader2.close();
-		String s3="My name is unknown";
-		String[] words3=s3.split(" ");
-		StringBuilder sb=new StringBuilder();
-		for(int i=words3.length-1;i>=0;i--) {
-		sb.append(words3[i]+" ");
-		}
-		System.out.println(sb.toString().trim());
+
 	}
 }
